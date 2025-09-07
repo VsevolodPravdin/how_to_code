@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {"name":"Python: Current File","type":"python","request":"launch","program":"${file}","console":"integratedTerminal"},
+    {"name":"C++: Debug active file","type":"cppdbg","request":"launch","program":"${workspaceFolder}/.bin/${fileBasenameNoExtension}","cwd":"${fileDirname}","MIMode":"gdb","miDebuggerPath":"/usr/bin/gdb","preLaunchTask":"Build C++ (active file)"},
+    {"name":"C: Debug active file","type":"cppdbg","request":"launch","program":"${workspaceFolder}/.bin/${fileBasenameNoExtension}","cwd":"${fileDirname}","MIMode":"gdb","miDebuggerPath":"/usr/bin/gdb","preLaunchTask":"Build C (active file)"},
+    {"name":"Pascal: Debug active file (gdb)","type":"cppdbg","request":"launch","program":"${workspaceFolder}/.bin/${fileBasenameNoExtension}","cwd":"${fileDirname}","MIMode":"gdb","miDebuggerPath":"/usr/bin/gdb","preLaunchTask":"Build Pascal (active file)"},
+    {"name":"Go: Launch (folder of active file)","type":"go","request":"launch","mode":"auto","program":"${fileDirname}"},
+    {"type":"java","name":"Java: Current File","request":"launch","mainClass":"${fileBasenameNoExtension}"},
+    {"name":".NET: Launch Hello","type":"coreclr","request":"launch","preLaunchTask":"Build .NET (Hello)","program":"${workspaceFolder}/csharp/Hello/bin/Debug/net8.0/Hello.dll","cwd":"${workspaceFolder}/csharp/Hello","console":"integratedTerminal"}
+  ]
+}

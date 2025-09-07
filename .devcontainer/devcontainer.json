@@ -1,0 +1,32 @@
+{
+  "name": "Multilang Pair-Programming",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/python:1": {"version": "3.12"},
+    "ghcr.io/devcontainers/features/java:1": {"version": "21"},
+    "ghcr.io/devcontainers/features/dotnet:2": {"version": "8.0"},
+    "ghcr.io/devcontainers/features/go:1": {"version": "1.22"}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-vscode.cpptools",
+        "golang.Go",
+        "ms-dotnettools.csharp",
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "alefragnani.pascal",
+        "ms-vsliveshare.vsliveshare"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential gdb cmake lldb fpc && /usr/local/go/bin/go install github.com/go-delve/delve/cmd/dlv@latest && echo 'export PATH=$PATH:/home/vscode/go/bin' >> /home/vscode/.bashrc",
+  "remoteUser": "vscode"
+}

@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"Run Python (active file)","type":"shell","command":"python3 '${file}'","problemMatcher":[]},
+    {"label":"Build C (active file)","type":"shell","command":"mkdir -p .bin && gcc -g -O0 '${file}' -o '.bin/${fileBasenameNoExtension}'","problemMatcher":"$gcc"},
+    {"label":"Run C (last build)","type":"shell","command":".bin/${fileBasenameNoExtension}","problemMatcher":[]},
+    {"label":"Build C++ (active file)","type":"shell","command":"mkdir -p .bin && g++ -g -O0 '${file}' -o '.bin/${fileBasenameNoExtension}'","problemMatcher":"$gcc"},
+    {"label":"Run C++ (last build)","type":"shell","command":".bin/${fileBasenameNoExtension}","problemMatcher":[]},
+    {"label":"Build Pascal (active file)","type":"shell","command":"mkdir -p .bin && fpc -g -Mobjfpc -o'.bin/${fileBasenameNoExtension}' '${file}'","problemMatcher":[]},
+    {"label":"Run Pascal (last build)","type":"shell","command":".bin/${fileBasenameNoExtension}","problemMatcher":[]},
+    {"label":"Build Go (active file)","type":"shell","command":"mkdir -p .bin && go build -o '.bin/${fileBasenameNoExtension}' '${file}'","problemMatcher":[]},
+    {"label":"Run Go (last build)","type":"shell","command":".bin/${fileBasenameNoExtension}","problemMatcher":[]},
+    {"label":"Build Java (active file)","type":"shell","command":"mkdir -p .bin/classes && javac -g -d .bin/classes '${file}'","problemMatcher":"$javac"},
+    {"label":"Run Java (last build)","type":"shell","command":"java -cp .bin/classes ${fileBasenameNoExtension}","problemMatcher":[]},
+    {"label":"Build .NET (Hello)","type":"shell","command":"dotnet build ./csharp/Hello/Hello.csproj -c Debug","problemMatcher":"$msCompile"},
+    {"label":"Run .NET (Hello)","type":"shell","command":"dotnet run --project ./csharp/Hello/Hello.csproj","problemMatcher":"$msCompile"}
+  ]
+}
